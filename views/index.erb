@@ -1,0 +1,12 @@
+<html>
+<body>
+    <h2><%= Time.now %></h2>
+    <script type="text/javascript">
+        var jsonStream = new EventSource('http://192.168.0.100:9292/stream/messages')
+        jsonStream.addEventListener('message',function(e){
+            document.writeln(e.data);
+            document.writeln("<br />");
+        }, false);
+    </script>
+</body>
+</html>
